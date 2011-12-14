@@ -12,18 +12,40 @@
 <p>
   <b>Users:</b>
   <ul class="long">
+
   <% @project.users.each do |u| %>
-  <li><b><%= u.email %></b>
+
+  <% @u_tasks = @project.tasks.where(:user_id => u) %>
+
+  <li>
+   <% if @u_tasks.empty? %>
+     <b><%= u.email %></b>
   <span class="assign_task">Assign Tasks:</span>
 
    <div class="tasks">
-     <p>Title:<br/><input type="text" /></p>
-     <p>Description:<br/>
-     <textarea rows="4" cols="44"></textarea></p>
-      <p><input type="button" value="Add Task" /></p>
+   <%= form_for ([@project, Task.new]) do |f| %>
+   <input type="hidden" value="<%=u.id%>" name="task[user_id]" />
+      <p class="fleld"><%= f.label :name %><br />
+       <%= f.text_field :name %></p>
+       <p class="field">
+  <%= f.label :description %><br />
+  <%= f.text_area :description,rows: 4,cols: 44 %>
+</p>
+      <p class="actions">
+  <%= f.submit %>
+</p>
 
+  <% end %>
    </div>
-
+  <% else %>
+  <% @u_tasks.each do |u_wid_task| %>
+  <span>&#9786;<%=u.email%></span><div class="task-list">
+    <b>Assigned Task</b><br/>
+    <u>Name: </u><%=u_wid_task.name%><br />
+    <u>Description:</u> <%=u_wid_task.description%>
+    </div>
+    <%end%>
+<% end %>
   </li>
 
   <% end %>

@@ -176,6 +176,17 @@ padding:20px 8px;
 border-bottom:1px solid #999;
 
 }
+ul.long li span{
+	background: none repeat scroll 0 0 #DDEEFF;
+    font-size: 18px;
+    padding: 7px;
+    border-radius:6px 6px 0px 0px;
+    -moz-border-radius:6px 6px 0px 0px;
+    -webkit-border-radius:6px 6px 0px 0px;
+    font-weight:bold;
+    color:#f60
+}
+
 .assign_task{
    background:#eaeaea;
    padding:4px 8px;
@@ -210,5 +221,12 @@ table tr td{
   padding:6px 12px;
   border:1px solid #ccc;
   border-collapse: collapse;
+}
+.task-list{
+background:#def;
+padding:8px;
+color:#069;
+line-height: 22px;
+
 }
 
