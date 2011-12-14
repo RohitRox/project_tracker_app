@@ -1,3 +1,4 @@
+<fieldset>
 <%= form_for(@project) do |f| %>
 <% if @project.errors.any? %>
 <div id="error_explanation">
@@ -19,12 +20,13 @@
   <%= f.label :description %><br />
   <%= f.text_area :description,rows: 16,cols: 74 %>
 </p>
-Assign Users <br/>
+
 <p class="users">
+<b>Assign Users </b><br/>
   <% User.all.each do |u| %>
 
   <%= check_box_tag 'project[user_ids][]', u.id -%>
-  <%=  u.email -%>
+  <label><span><%=  u.email -%></span></label>
 
   <% end %>
 </p>
@@ -33,5 +35,5 @@ Assign Users <br/>
   <%= f.submit %>
 </p>
 <% end %>
-
+</fieldset>
 

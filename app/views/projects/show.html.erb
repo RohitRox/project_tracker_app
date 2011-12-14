@@ -11,21 +11,27 @@
 </p>
 <p>
   <b>Users:</b>
+  <ul class="long">
   <% @project.users.each do |u| %>
-  <span class="user_task"><%= u.email %><span>
+  <li><b><%= u.email %></b>
   <span class="assign_task">Assign Tasks:</span>
-   <div id="tasks">
+
+   <div class="tasks">
      <p>Title:<br/><input type="text" /></p>
      <p>Description:<br/>
-     <textarea rows="4" cols="44"></textarea><br/>
-     <input type="button" value="Add Task" />
-     </p>
+     <textarea rows="4" cols="44"></textarea></p>
+      <p><input type="button" value="Add Task" /></p>
+
    </div>
+
+  </li>
+
   <% end %>
- 
+</ul>
 </p>
 
 
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
+

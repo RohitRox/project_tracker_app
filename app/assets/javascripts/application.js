@@ -7,3 +7,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+$(document).ready(function(){
+	$('div.tasks').hide();
+
+	$('.assign_task').click(function(){
+
+		$(this).parent('li').find('div.tasks').slideDown(800);
+	});
+});
+

@@ -1,6 +1,8 @@
 class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
+  before_filter :authenticate_user!
+
   def index
     @projects = Project.all
 
@@ -25,7 +27,7 @@ class ProjectsController < ApplicationController
   # GET /projects/new.json
   def new
     @project = Project.new
- 
+
 
     respond_to do |format|
       format.html # new.html.erb
@@ -47,10 +49,10 @@ class ProjectsController < ApplicationController
    else
      render action: "new"
    end
-     
+
     # respond_to do |format|
-    #   if @project.save 
-    #                  
+    #   if @project.save
+    #
     #                 format.html { redirect_to @project, notice: 'Project was successfully created.' }
     #                 format.json { render json: @project, status: :created, location: @project }
     #               else
@@ -88,3 +90,4 @@ class ProjectsController < ApplicationController
     end
   end
 end
+
