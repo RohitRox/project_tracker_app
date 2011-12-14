@@ -9,6 +9,22 @@
   <b>Description:</b>
   <%= @project.description %>
 </p>
+<p>
+  <b>Users:</b>
+  <% @project.users.each do |u| %>
+  <%= u.email %>
+  Assign Tasks:
+   <div id="tasks">
+     <p>Title:<br/><input type="text" /></p>
+     <p>Description:<br/>
+     <textarea rows="4" cols="44"></textarea><br/>
+     <input type="button" value="Add Task" />
+     </p>
+   </div>
+  <% end %>
+ 
+</p>
+
 
 
 <%= link_to 'Edit', edit_project_path(@project) %> |

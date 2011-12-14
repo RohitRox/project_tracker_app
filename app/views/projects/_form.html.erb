@@ -1,25 +1,37 @@
 <%= form_for(@project) do |f| %>
-  <% if @project.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+<% if @project.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
 
-      <ul>
-      <% @project.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <ul>
+    <% @project.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
 <% end %>
+
+<p class="field">
+  <%= f.label :name %><br />
+  <%= f.text_field :name %>
+</p>
+<p class="field">
+  <%= f.label :description %><br />
+  <%= f.text_area :description,rows: 16,cols: 74 %>
+</p>
+Assign Users <br/>
+<p class="users">
+  <% User.all.each do |u| %>
+
+  <%= check_box_tag 'project[user_ids][]', u.id -%>
+  <%=  u.email -%>
+
+  <% end %>
+</p>
+
+<p class="actions">
+  <%= f.submit %>
+</p>
+<% end %>
+
+

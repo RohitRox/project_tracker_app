@@ -33,6 +33,7 @@ gem 'jquery-rails'
 
 group :test, :development do
   gem "nifty-generators"
+  gem 'pry'
 end
 group :test do
   # Pretty printed test output

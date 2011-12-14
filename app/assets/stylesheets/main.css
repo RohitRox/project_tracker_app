@@ -77,3 +77,38 @@ h1{
   color:#B7AFA3;
   background:url(../../assets/images/half-divider.png) bottom repeat-y;
 }
+.project-form{
+  width:600px;
+  margin:4px 0px;
+}
+.project-form legend{
+  padding:2px 4px;
+  background:#fff;
+}
+
+/* ===========  FORM STYING ============  ROXYPOXY ========== */
+fieldset{
+  background:#ccc;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -border-radius: 5px;
+  -khtml-border-radius: 5px;
+}
+legend {
+font-size: 1.5em;
+color: #929292;
+font-weight: bold;
+margin-left: 110px;
+padding: 5px 10px;
+border: 1px solid #929292;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+-border-radius: 5px;
+-khtml-border-radius: 5px;
+text-transform: capitalize;
+}
+
+#tasks{
+  background-color:#E8E6DA;
+  padding:8px 2px;
+}

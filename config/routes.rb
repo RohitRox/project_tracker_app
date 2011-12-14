@@ -1,8 +1,9 @@
 PJTracker::Application.routes.draw do
-  resources :projects
+  resources :projects 
 
   devise_for :users
   resource :home
+
   root :to => 'home#index'
   
 
