@@ -12,8 +12,8 @@
 <p>
   <b>Users:</b>
   <% @project.users.each do |u| %>
-  <%= u.email %>
-  Assign Tasks:
+  <span class="user_task"><%= u.email %><span>
+  <span class="assign_task">Assign Tasks:</span>
    <div id="tasks">
      <p>Title:<br/><input type="text" /></p>
      <p>Description:<br/>

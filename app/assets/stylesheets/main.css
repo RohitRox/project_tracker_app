@@ -112,3 +112,11 @@ text-transform: capitalize;
   background-color:#E8E6DA;
   padding:8px 2px;
 }
+.user_task{
+  background:#E8E6DA;
+  padding:4px 8px;
+}
+.assign_task{
+   background:#999;
+   padding:4px 8px;
+}
