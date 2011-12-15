@@ -31,6 +31,7 @@
      <%= select_tag('project[status]',options_for_select( [ ['Analysis','Analysis' ], ['Design','Design' ], ['Code', 'Code'], ['Test', 'Test'], ['Completed', 'Completed'],['Delivered', 'Delivered'] ])) %> 
   </p>
   <% end %>
+  <% if @project.id==nil %>
   <p class="users">
     <b>Assign Users </b><br/>
     <% User.all.each do |u| %>
@@ -40,7 +41,7 @@
 
     <% end %>
   </p>
-
+<%end%>
   <p class="actions">
     <%= f.submit %>
   </p>

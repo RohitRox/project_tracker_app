@@ -44,4 +44,6 @@ group :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'valid_attribute'
+   gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~/darwin/i
+  
 end

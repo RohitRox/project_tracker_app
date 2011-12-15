@@ -6,7 +6,7 @@ describe "Login" do
 
     user = Factory(:user, :email => "user@example.com", :password => "example", :password_confirmation => "example")
 
-    visit "/users/sign_in"
+    visit user_session_path
 
     fill_in "Email", :with => user.email
 
