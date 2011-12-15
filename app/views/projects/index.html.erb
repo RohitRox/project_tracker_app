@@ -19,8 +19,8 @@
     <td><%=project.status %></td>
     <td><%= link_to 'Show', project %></td>
     <% if project.author == current_user.id %>
-    <td><%= link_to 'Edit', edit_project_path(project) %></td>
-    <td><%= link_to 'Destroy', project, confirm: 'Are you sure?', method: :delete %></td>
+    <td id="edit_<%=(project.id) %>"><%= link_to 'Edit', edit_project_path(project) %></td>
+    <td id="destroy_<%=(project.id) %>"><%= link_to 'Destroy', project, confirm: 'Are you sure?', method: :delete %></td>
 
     <% end %>
   </tr>
