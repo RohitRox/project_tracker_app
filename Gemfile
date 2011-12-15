@@ -34,8 +34,14 @@ gem 'jquery-rails'
 group :test, :development do
   gem "nifty-generators"
   gem 'pry'
+  gem 'rspec-rails'
 end
 group :test do
   # Pretty printed test output
   gem 'turn', '~> 0.8.3', :require => false
+  gem 'factory_girl_rails'
+  gem 'launchy'
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'valid_attribute'
 end

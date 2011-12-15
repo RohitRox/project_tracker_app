@@ -44,11 +44,11 @@ class ProjectsController < ApplicationController
   # POST /projects.json
   def create
     @project = Project.new(params[:project])
-   if @project.save
-     redirect_to @project, notice: 'Project was successfully created.'
-   else
-     render action: "new"
-   end
+    if @project.save
+      redirect_to @project, notice: 'Project was successfully created.'
+    else
+      render action: "new"
+    end
 
     # respond_to do |format|
     #   if @project.save
