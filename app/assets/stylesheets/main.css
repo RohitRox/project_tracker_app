@@ -253,3 +253,31 @@ nav ul li{
 .clear{
   clear:both;
 }
+.box-block{
+width:280px;
+background:#F0EBA8;
+}
+.box-block header{
+background: rgb(32,124,229); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(32,124,229,1) 0%, rgba(73,155,234,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(32,124,229,1)), color-stop(100%,rgba(73,155,234,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(32,124,229,1) 0%,rgba(73,155,234,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(32,124,229,1) 0%,rgba(73,155,234,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(32,124,229,1) 0%,rgba(73,155,234,1) 100%); /* IE10+ */
+background: linear-gradient(top,  rgba(32,124,229,1) 0%,rgba(73,155,234,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#207ce5', endColorstr='#499bea',GradientType=0 ); /* IE6-9 */
+padding:6px;
+font-size:18px;
+font-weight:bold;
+color:white;
+text-shadow:1px 1px 1px #333;
+}
+.box-block div{
+padding:6px;
+border-bottom:1px solid #fff;
+box-shadow:0px 1px 1px #999;
+}
+.list-box li{
+display:inline-table
+}
+

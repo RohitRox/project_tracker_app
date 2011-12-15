@@ -1,0 +1,18 @@
+<div class="box-block">
+<header>Authored Projects</header>
+<% myprojects = Project.where(:author => current_user.id) %>
+<% myprojects.each do |p| %>
+<div>
+<p><b>Project: </b><%=p.name%></p>
+<p><b>Status: </b><%=p.status%></p>
+<p><b>Collaborators: </b>
+<% users = p.users %>
+<% users.each do |u| %>
+<p>&#8857; <%=u.email%> <%="[ Myself ]" if u == current_user%></p>
+<%end%>
+</p>
+<%=link_to 'read more',p %>
+</div>
+<% end %>
+</div>
+

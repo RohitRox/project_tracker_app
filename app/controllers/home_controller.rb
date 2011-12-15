@@ -1,12 +1,18 @@
 class HomeController < ActionController::Base
-  
+
   layout 'main'
-  before_filter :authenticate_user!
-  
+
   def index
-  @project = Project.new
+  if user_signed_in?
+  @allprojects = Project.all
+  @myprojects = current_user.projects
   respond_to do |format|
   format.html
   end
+  else
+    redirect_to user_session_path
+  end
+
   end
 end
+

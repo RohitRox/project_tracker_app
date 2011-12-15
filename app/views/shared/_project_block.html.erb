@@ -1,0 +1,13 @@
+<div class="box-block">
+<header>My Projects</header>
+<% @myprojects.each do |p| %>
+<div>
+<p><b>Project: </b><%=p.name%></p>
+<p><b>Created By: </b><%=User.find(p.author).email%></p>
+<p><b>Status: </b><%=p.status%></p>
+<p><b>Deadline: </b><%=p.deadline%></p>
+<%=link_to 'read more',p %>
+</div>
+<% end %>
+</div>
+

@@ -4,7 +4,10 @@
   <b>Name:</b>
   <%= @project.name %>
 </p>
-
+<p>
+  <b>Author:</b>
+  <%= User.find(@project.author).email %>
+</p>
 <p>
   <b>Description:</b>
   <%= @project.description %>
@@ -30,6 +33,7 @@
     <li>
       <% if @u_tasks.empty? %>
       <b><%= u.email %></b>
+      <%if @project.author == current_user.id %>
       <span class="assign_task">Assign Tasks:</span>
 
       <div class="tasks">
@@ -49,6 +53,7 @@
 
           <% end %>
         </div>
+        <%end%>
         <% else %>
         <% @u_tasks.each do |u_wid_task| %>
         <span>   &#9786;   <%=u.email%></span><div class="task-list">

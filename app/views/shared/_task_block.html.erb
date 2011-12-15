@@ -1,0 +1,11 @@
+<div class="box-block">
+<header>My Tasks</header>
+<% mytasks = current_user.tasks %>
+<% mytasks.each do |t| %>
+<div>
+<p><b>Task Name: </b><%=t.name%></p>
+<p><b>For Project: </b><%=t.project.name%></p>
+</div>
+<% end %>
+</div>
+
