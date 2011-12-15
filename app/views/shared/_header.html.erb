@@ -4,11 +4,14 @@
 Welcome <b> <%=current_user.email %> </b> | <%= link_to "Log Out",destroy_user_session_path, :method=>:delete %>
 <% end  %>
 </div>
+<% if user_signed_in? %>
 <nav>
   <ul>
     <li><%= link_to 'Home', root_path %></li>
     <li><%= link_to 'New Project', new_project_path %></li>
     <li><%= link_to 'All Projects', projects_path %></li>
   </ul>
-  </nav>
-  <div class="clear"></div>
+ </nav>
+ <% end %>
+ <div class="clear"></div>
+

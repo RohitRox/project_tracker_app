@@ -19,7 +19,7 @@
     <%= @project.deadline %>
   </p>
   <p>
-    
+
   <b>Users:</b>
   <ul class="long">
 
@@ -33,8 +33,10 @@
       <span class="assign_task">Assign Tasks:</span>
 
       <div class="tasks">
+        <p>Enter Task Details</p>
         <%= form_for ([@project, Task.new]) do |f| %>
         <input type="hidden" value="<%=u.id%>" name="task[user_id]" />
+
         <p class="fleld"><%= f.label :name %><br />
           <%= f.text_field :name %></p>
           <p class="field">
