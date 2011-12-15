@@ -2,10 +2,10 @@
 <html>
 <head>
 <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
-
+<%= javascript_include_tag "jquery", "jquery_ui" %>
 <%= javascript_include_tag "application" %>
+<%= stylesheet_link_tag "jquery-ui" ,"main" %>
 
-<%= stylesheet_link_tag "main" %>
 
 <%= csrf_meta_tag %>
 

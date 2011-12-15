@@ -44,6 +44,7 @@ class ProjectsController < ApplicationController
   # POST /projects.json
   def create
     @project = Project.new(params[:project])
+    
     if @project.save
       redirect_to @project, notice: 'Project was successfully created.'
     else
