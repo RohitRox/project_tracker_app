@@ -25,7 +25,12 @@
     <%= f.label :deadline %><br />
     <%= f.text_field :deadline  %>
   </p>
-
+  <% if @project.id!=nil %>
+  <p class="field">
+    <%= f.label :status %><br />
+     <%= select_tag('project[status]',options_for_select( [ ['Analysis','Analysis' ], ['Design','Design' ], ['Code', 'Code'], ['Test', 'Test'], ['Completed', 'Completed'],['Delivered', 'Delivered'] ])) %> 
+  </p>
+  <% end %>
   <p class="users">
     <b>Assign Users </b><br/>
     <% User.all.each do |u| %>

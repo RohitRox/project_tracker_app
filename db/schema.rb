@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111215043457) do
+ActiveRecord::Schema.define(:version => 20111215051930) do
 
   create_table "assocs", :force => true do |t|
     t.integer  "project_id"
@@ -25,8 +25,8 @@ ActiveRecord::Schema.define(:version => 20111215043457) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "status"
-    t.date     "deadline"
+    t.string   "status",      :default => "Initial"
+    t.string   "deadline"
   end
 
   create_table "projects_users", :id => false, :force => true do |t|
