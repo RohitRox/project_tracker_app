@@ -7,8 +7,8 @@ FactoryGirl.define do
    end
    
    factory :project do
-     name 'lskdjflsdfjsd'
-     description 'lsdkfjsldfkjsldfkjsldfjsldfsdf'
-     deadline 'sldkfjsldfjsdlfkj'
+     name 'aaaaaa'
+     description 'aaaaaaaaaa'
+     deadline '11-11-11'
    end
 end
