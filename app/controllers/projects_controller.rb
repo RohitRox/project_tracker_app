@@ -39,7 +39,7 @@ class ProjectsController < ApplicationController
   def edit
     @project = Project.find(params[:id])
     if @project.author == current_user.id
-    @project = Project.find(params[:id])
+      @project = Project.find(params[:id])
     else
       flash[:alert] = 'You do not have permission to access this page !'
       redirect_to projects_path
@@ -80,13 +80,28 @@ class ProjectsController < ApplicationController
   def destroy
     @project = Project.find(params[:id])
     if @project.author == current_user.id
-    @project.destroy
+      @project.destroy
     else
       flash[:alert] = 'You do not have permission to access this page !'
       redirect_to projects_path
-    end
-
-    
+    end    
   end
+
+  # POST /projects/1/add_user
+  def user_add
+    @project = Project.find(params[:id])
+    @usr = User.find(params[:post]['user'])
+    if @project.users.where(:id => @usr.id).exists? 
+      respond_to do |format|
+        format.html { redirect_to @project, notice: 'Opps ! This User is already assigned to your project.' }
+      end
+    else
+      @project.users << @usr
+      respond_to do |format|
+        format.html { redirect_to @project, notice: '1 user added to your project.' }
+      end
+    end
+  end
+
 end
 

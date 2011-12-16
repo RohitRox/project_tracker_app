@@ -2,13 +2,15 @@ PJTracker::Application.routes.draw do
 
    resources :projects do
       resources :tasks #, :except => [:show, :index]
+      member do
+        put 'user_add'
+      end
     end
 
   devise_for :users
   resource :home
 
   root :to => 'home#index'
-
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -20,7 +22,9 @@ PJTracker::Application.routes.draw do
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
-
+  
+  #match 'project/:id/add_user' => 'project#add_user', :as => add_user
+  
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 

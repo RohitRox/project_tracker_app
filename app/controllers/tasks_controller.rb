@@ -21,6 +21,7 @@ class TasksController < ActionController::Base
 
   def find_project
     @project = Project.find(params[:project_id])
+    @usr = find(params[:add])
   end
 
 
