@@ -90,6 +90,7 @@ class ProjectsController < ApplicationController
   # POST /projects/1/add_user
   def user_add
     @project = Project.find(params[:id])
+    if @project.author == current_user.id 
     @usr = User.find(params[:post]['user'])
     if @project.users.where(:id => @usr.id).exists? 
       respond_to do |format|
@@ -100,6 +101,10 @@ class ProjectsController < ApplicationController
       respond_to do |format|
         format.html { redirect_to @project, notice: '1 user added to your project.' }
       end
+    end
+    else
+         flash[:alert] = 'You do not have permission to access this page !'
+         redirect_to project_path('You do not have permission to perform this operation !')
     end
   end
 

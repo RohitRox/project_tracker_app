@@ -72,6 +72,7 @@
       </ul>
     </p>
       
+      <%if @project.author == current_user.id %>
       <p>  
        <%= form_for @project,:url => { :action => "user_add" } do |f| %>
       <b>Add More Collaborators </b>
@@ -88,7 +89,7 @@
       <%=submit_tag "Add"%>
       <%end%>
       </p>
-
+      <%end%>
 
       <%= link_to 'Edit', edit_project_path(@project) %> |
       <%= link_to 'Back', projects_path %>
