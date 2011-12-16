@@ -40,7 +40,7 @@
 
         <div class="tasks">
           <p>Enter Task Details</p>
-          <%= form_for ([@project, Task.new]) do |f| %>
+          <%= form_for [@project, Task.new], :html => { :id => "project_user_#{u.id}" } do |f| %>
           <input type="hidden" value="<%=u.id%>" name="task[user_id]" />
 
           <p class="fleld"><%= f.label :name %><br />
