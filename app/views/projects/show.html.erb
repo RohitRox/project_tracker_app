@@ -10,10 +10,7 @@
 </p>
 <p>
   <b>Description:</b><br />
-  
-   <textarea rows="6" cols="124" id="desc_edit" disabled="disabled" >
-   <%= @project.description %> 
-   </textarea>
+  <%= best_in_place @project, :description, :type => :textarea %>
    
 </p>
 <p>

@@ -4,7 +4,9 @@ PJTracker::Application.routes.draw do
       resources :tasks #, :except => [:show, :index]
       member do
         put 'user_add'
+        post 'update_desc'
       end
+        
     end
 
   devise_for :users

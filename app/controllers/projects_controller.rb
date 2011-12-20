@@ -109,5 +109,15 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def update_desc
+    @project = Project.find(params[:id])
+    @project.description =params[:value]
+    if @project.save
+      respond_to do |format|
+      format.js
+      end
+    end
+  end
+  
 end
 
