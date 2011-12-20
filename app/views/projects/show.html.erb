@@ -9,8 +9,12 @@
   <%= User.find(@project.author).email %>
 </p>
 <p>
-  <b>Description:</b>
-  <%= @project.description %>
+  <b>Description:</b><br />
+  
+   <textarea rows="6" cols="124" id="desc_edit" disabled="disabled" >
+   <%= @project.description %> 
+   </textarea>
+   
 </p>
 <p>
   <b>Status:</b>
@@ -47,7 +51,7 @@
             <%= f.text_field :name %></p>
             <p class="field">
               <%= f.label :description %><br />
-              <%= f.text_area :description,rows: 4,cols: 44 %>
+             <%= f.text_area :description,rows: 4,cols: 44 %>
             </p>
             <p class="actions">
               <%= f.submit %>
@@ -61,7 +65,10 @@
           <span>   &#9786;   <%=u.email%></span><div class="task-list">
             <b>Assigned Task</b><br/>
             <u>Name: </u><%=u_wid_task.name%><br />
-            <u>Description:</u> <%=u_wid_task.description%>
+            <u>Description:</u> 
+           
+            <%=u_wid_task.description%>
+           
           </div>
           <%end%>
           <% end %>
